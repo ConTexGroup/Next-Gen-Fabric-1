@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Generation Technical Fabric for Performance, Comfort, and Hygiene - Conbello Textile</title>
+    <meta name="description" content="Discover Conbello Textile's next-generation technical fabric with advanced air-layer technology for superior performance, comfort, and hygiene. Minimize sweat, irritation, and enjoy unparalleled breathability.">
+    <meta name="keywords" content="next-gen fabric, performance fabric, comfort fabric, hygienic fabric, air-layer technology, Conbello Textile, technical textile, moisture management, anti-irritation, anti-allergic, elastane blend, sustainable fabric, sportswear fabric, sensitive skin fabric">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark gray background */
+            color: #e0e0e0; /* Light gray text */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f0f0f0;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        /* Apply the underline only to section headings that are NOT embossed */
+        .section-heading:not(.embossed-heading)::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #60a5fa; /* Bright highlight color */
+            border-radius: 2px;
+        }
+        .embossed-heading {
+            background-color: #4a4a4a; /* Light gray for button-like background */
+            color: #f0f0f0; /* Text color */
+            padding: 1.5rem 2.5rem; /* More padding for a prominent heading */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: inset 0 3px 8px rgba(255, 255, 255, 0.15), 0 5px 15px rgba(0, 0, 0, 0.5); /* Stronger embossed effect */
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Border for definition */
+            text-shadow: 0 0 8px #60a5fa, 0 0 15px #60a5fa; /* Bright blue light around text */
+            display: block; /* Ensure it takes full width */
+            text-align: center; /* Center the text */
+            font-size: 2.5rem; /* Keep existing heading size */
+            font-weight: 700; /* Keep existing heading weight */
+            position: relative;
+        }
+        .card {
+            background-color: #2a2a2a; /* Slightly lighter dark gray for cards */
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+        }
+        .accordion-button {
+            background-color: #4a4a4a; /* Light gray for buttons */
+            color: #f0f0f0;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(0, 0, 0, 0.3); /* Embossed effect */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden; /* For highlight effect */
+        }
+        .accordion-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .accordion-button:hover::before {
+            left: 100%;
+        }
+        .accordion-button:hover {
+            background-color: #5a5a5a; /* Slightly darker on hover */
+            box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.15), 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .accordion-button.active {
+            background-color: #60a5fa; /* Highlight color when active */
+            color: #1a1a1a;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .accordion-content {
+            background-color: #3a3a3a; /* Slightly darker for content */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 0.5rem;
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .accordion-content p {
+            margin-bottom: 1rem;
+            color: #c0c0c0;
+        }
+        .accordion-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            color: #c0c0c0;
+        }
+        .accordion-button svg {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button.active svg {
+            transform: rotate(180deg);
+        }
+        .main-button {
+            background-color: #4a4a4a; /* Light gray for buttons */
+            color: #f0f0f0;
+            padding: 1.2rem 2.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(0, 0, 0, 0.3); /* Embossed effect */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .main-button:hover::before {
+            left: 100%;
+        }
+        .main-button:hover {
+            background-color: #5a5a5a;
+            box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.15), 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .illuminated-button {
+            background-color: #4a4a4a; /* Same light gray background */
+            color: #60a5fa; /* Bright blue text color */
+            text-shadow: 0 0 8px #60a5fa, 0 0 15px #60a5fa, 0 0 20px #60a5fa; /* Stronger blue glow */
+            /* Inherits other styles from .main-button */
+        }
+        .illuminated-button:hover {
+            background-color: #5a5a5a; /* Same hover background */
+            box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.15), 0 4px 10px rgba(0, 0, 0, 0.4);
+            text-shadow: 0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 30px #60a5fa; /* Stronger glow on hover */
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+            .embossed-heading {
+                font-size: 1.8rem; /* Adjust font size for mobile */
+                padding: 1rem 1.5rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .accordion-button {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+            }
+            .accordion-content {
+                padding: 1rem;
+            }
+            .main-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            .illuminated-button {
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="py-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-white mb-4 leading-tight">
+                <span class="block text-blue-400">Conbello Textile:</span> Next-Generation Technical Fabric
+            </h1>
+            <p class="text-xl md:text-2xl text-center text-gray-300 mb-8">
+                Unveiling the Future of Performance, Comfort, and Hygiene in Textiles
+            </p>
+            <!-- Removed "Explore Fabric" and "Contact Us" buttons from here -->
+        </header>
+
+        <section id="overview" class="my-12">
+            <h2 class="section-heading embossed-heading">Next-Gen Fabric: Strong as steel and soft as silk</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">Traditional Synthetic Fabrics: The Old Standard</h3>
+                    <p class="text-gray-400 mb-4">
+                        For years, synthetic fabrics like polyamide (nylon) and polyester have dominated performance wear. While offering durability, they come with significant drawbacks that impact user comfort and health.
+                    </p>
+                    <div class="accordion-container">
+                        <button class="accordion-button flex items-center justify-between" aria-expanded="false">
+                            <span>Health Concerns & Allergic Reactions</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Studies have indicated that polyamide fabrics, in particular, may contain elevated levels of Bisphenol A (BPA). BPA is a chemical compound linked to various serious health risks, including certain types of cancer and hormonal disruptions. This poses a significant concern for prolonged skin contact, especially in active wear.</p>
+                        </div>
+
+                        <button class="accordion-button flex items-center justify-between mt-3" aria-expanded="false">
+                            <span>Inefficient Moisture Management</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>A primary limitation of traditional synthetic fabrics is their inability to efficiently manage moisture. While they can absorb sweat from the skin, they often lack the crucial ability to transfer that moisture to the fabric's surface for rapid evaporation. This leads to:</p>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Retained Dampness:</strong> The fabric remains wet, leaving both the garment and the skin feeling damp.</li>
+                                <li><strong>Discomfort:</strong> A persistent wet sensation causes significant discomfort during wear.</li>
+                                <li><strong>Increased Body Temperature:</strong> Poor evaporation hinders the body's natural cooling process, leading to a rise in body temperature.</li>
+                                <li><strong>Heavy Garment Feel:</strong> As the fabric retains moisture, it feels increasingly heavy, hindering performance and comfort.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">Conbello Textile's Innovation: Air-Layer Technology</h3>
+                    <p class="text-gray-400 mb-4">
+                        Conbello Textile's R&D department has engineered a revolutionary fabric to overcome these challenges, setting a new benchmark for textile performance.
+                    </p>
+                    <div class="accordion-container">
+                        <button class="accordion-button flex items-center justify-between" aria-expanded="false">
+                            <span>Microfilm-Like Air Gap</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Our next-generation technical fabric incorporates advanced air-layer technology. This innovative construction introduces a microfilm-like air gap strategically positioned between the skin and the textile. This unique feature is fundamental to its superior performance.</p>
+                        </div>
+
+                        <button class="accordion-button flex items-center justify-between mt-3" aria-expanded="false">
+                            <span>Reduced Skin Contact & Friction</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>The integrated air gap results in a substantial reduction in direct skin contact and friction. This critical design element directly contributes to:</p>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Minimized Sweating:</strong> Less contact means less heat trapped against the skin, naturally reducing sweat production.</li>
+                                <li><strong>Lowered Irritation Risk:</strong> Reduced friction significantly minimizes the likelihood of skin chafing, rashes, and general irritation, especially during prolonged wear or high activity.</li>
+                                <li><strong>Reduced Allergic Reactions:</strong> By creating a barrier and minimizing direct chemical exposure from the fabric, the risk of allergic reactions is substantially lowered, making it ideal for sensitive skin.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="my-12">
+            <h2 class="section-heading">Key Features & Benefits of Conbello's Next-Gen Fabric</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">Unrivaled Comfort</h3>
+                    <p class="text-gray-400 mb-4">
+                        Experience a new level of comfort, regardless of the climate.
+                    </p>
+                    <div class="accordion-container">
+                        <button class="accordion-button flex items-center justify-between" aria-expanded="false">
+                            <span>Ultra-Soft Inner & Outer Surface</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>The fabric's construction boasts an incredibly soft inner and outer surface, providing a luxurious feel against the skin. This premium softness ensures remarkable comfort in both hot and cold environments, adapting to your body's needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">Exceptional Durability & Elasticity</h3>
+                    <p class="text-gray-400 mb-4">
+                        Built to last, with superior resilience and fluid drape.
+                    </p>
+                    <div class="accordion-container">
+                        <button class="accordion-button flex items-center justify-between" aria-expanded="false">
+                            <span>Specialized Full Elastane Blend</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Thanks to a specialized full elastane blend that can reach up to 55%, this fabric is not only luxuriously soft but also exceptionally durable. This high elastane content is crucial for:</p>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Enhanced Elasticity:</strong> Provides superior stretch and recovery, ensuring the garment retains its shape over time.</li>
+                                <li><strong>Increased Resilience:</strong> Resists wear and tear, making it ideal for high-intensity activities and frequent washing.</li>
+                                <li><strong>Fluid Drape:</strong> Contributes to an elegant and comfortable fit, enhancing the aesthetic appeal of the garment.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">Optimized Breathability & Hygiene</h3>
+                    <p class="text-gray-400 mb-4">
+                        A truly breathable barrier for a cooler, drier, and healthier experience.
+                    </p>
+                    <div class="accordion-container">
+                        <button class="accordion-button flex items-center justify-between" aria-expanded="false">
+                            <span>Simulated Breathable Barrier</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>What truly distinguishes this new material is its unique ability to simulate a breathable barrier between the skin and the fabric. The integrated air layer is engineered to:</p>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Optimize Airflow:</strong> Allows air to circulate freely, preventing stuffiness and promoting ventilation.</li>
+                                <li><strong>Reduce Heat Build-up:</strong> Actively dissipates heat away from the body, maintaining a comfortable temperature.</li>
+                                <li><strong>Promote Rapid Moisture Evaporation:</strong> Facilitates quick drying by drawing moisture away from the skin and releasing it into the air.</li>
+                            </ul>
+                            <p>This ensures a consistently cooler, drier, and more hygienic experience, making it particularly valuable for individuals with sensitive or allergy-prone skin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="my-12">
+            <h2 class="section-heading">The Conbello Textile Advantage: A Transformative Upgrade</h2>
+            <div class="card">
+                <p class="text-lg text-gray-300 mb-4">
+                    Conbello Textile's Next-Generation fabric represents a pivotal advancement in textile engineering. It significantly outperforms traditional polyester and polyamide textiles by delivering an unrivaled combination of softness, breathability, moisture regulation, and skin-friendliness.
+                </p>
+                <p class="text-lg text-gray-300">
+                    Whether for everyday wear, casual comfort, or high-intensity athletic performance, this fabric offers a transformative upgrade in comfort and functionality. Choose Conbello Textile for a healthier, more comfortable, and higher-performing textile experience.
+                </p>
+            </div>
+        </section>
+
+        <footer class="mt-12 flex flex-col items-center space-y-4">
+            <a href="https://contexgroup.github.io/hyper-printing_1/hyper-printing_1.html" target="_blank" rel="noopener noreferrer" class="main-button illuminated-button">
+                Next-Generation Printing Technology in Sportswear: Improve all your fitness apparel designs, including leggings and sports bras.
+            </a>
+            <a href="https://www.conbello.com/High-Quality-gym-clothes-manufacturing-Conbello-Textile-contact" target="_blank" rel="noopener noreferrer" class="main-button">
+                Contact Us
+            </a>
+            <p class="mt-4">&copy; 2025 Conbello Textile. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const isActive = this.classList.toggle('active');
+
+                    if (isActive) {
+                        content.style.display = 'block';
+                        content.style.maxHeight = content.scrollHeight + 'px'; // Set max-height for smooth transition
+                    } else {
+                        content.style.maxHeight = '0'; // Collapse
+                        content.addEventListener('transitionend', function() {
+                            if (!this.classList.contains('active')) { // Only hide if not active after transition
+                                this.style.display = 'none';
+                            }
+                        }, { once: true });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
